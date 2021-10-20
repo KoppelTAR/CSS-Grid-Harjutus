@@ -1,0 +1,101 @@
+:root {
+    --main-padding: 0.4rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 1px solid green;
+}
+
+.container {
+    color: white;
+    display: grid;
+    gap: 5px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 0.8fr 1fr 0.5fr 0.8fr;
+    grid-template-areas: "header header header"
+    "feature1 feature2 feature3"
+    "sign_up sign_up sign_up"
+    "content content content";
+    height: 100vh;
+    text-align: center;
+    text-transform: uppercase;    
+}
+
+.container div {
+    display: grid;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+}
+
+
+#header {
+    background-color: cyan;
+    grid-area: header;
+    padding: var(--main-padding);
+    
+}
+
+#sign_up {
+    background-color: tomato;
+    grid-area: sign_up;
+    padding: var(--main-padding);
+}
+
+#feature1 {
+    background-color: seagreen;
+    grid-area: feature1;
+    padding: var(--main-padding);
+}
+
+#feature2 {
+    background-color: royalblue;
+    grid-area: feature2;
+    padding: var(--main-padding);
+}
+
+#feature3 {
+    background-color: thistle;
+    grid-area: feature3;
+    padding: var(--main-padding);
+}
+
+#content {
+    background-color: yellowgreen;
+    grid-area: content;
+    padding: var(--main-padding);
+}
+
+@media (max-width: 768px) {
+
+    .container {
+        gap: 0;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 0.7fr 1fr 0.6fr 0.6fr;
+        grid-template-areas: 
+        "header header"
+        "content content"
+        "sign_up feature1"
+        "feature2 feature3";
+    }
+
+}
+
+@media (max-width: 480px) {
+    .container {
+        gap: 0;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.6fr 1fr 0.6fr 0.6fr 0.6fr 0.6fr;
+        grid-template-areas: 
+        "header"
+        "content"
+        "sign_up"
+        "feature1"
+        "feature2"
+        "feature3";
+    }
+
+}
